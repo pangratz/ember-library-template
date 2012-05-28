@@ -16,10 +16,13 @@ Run the tests
 -------------
 
     $ bundle exec rake test
+
 or
+
     $ bundle exec rackup && open http://localhost:9292/tests/index.html
 
 or
+
     $ bundle exec rake autotest # if you're on a Mac
 
 Develop your library
