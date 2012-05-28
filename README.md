@@ -1,53 +1,28 @@
-Ember Skeleton
-==============
+Ember Library Template
+======================
 
-A skeleton application framework using Ember.js and Rake Pipeline.
+A template to get started when writing a new Ember.js template. This template is based on [interline/ember-skeleton](https://github.com/interline/ember-skeleton).
 
-Running
--------
+Get started
+-----------
 
+    $ git clone git@github.com:pangratz/ember-library-template.git
+    $ cd ember-library-template
     $ bundle install
-    $ bundle exec rackup
 
-App Structure
+Now the template is initialized. Next: change the name of your library. To do this, update the value of the `APPNAME` variable in `Rakefile` and `Assetfile`.
+
+Run the tests
 -------------
 
-    ember-skeleton
-    ├── Assetfile - App build file
-    ├── Gemfile - Package dependencies for rakep/rack
-    ├── Gemfile.lock - Here be dragons: don't touch, always include
-    ├── app - App specific code
-    │   ├── css - App CSS or SCSS (.scss)
-    │   ├── lib - App code, *modularized during build*
-    │   ├── modules - Module code, *already modularized*
-    │   ├── plugins - Plugins (e.g. jquery.jsonrpc.js)
-    │   │   └── loader.js - JS module loader
-    │   ├── static - Static files, never touched, copied over during build
-    │   ├── templates - Handlebars templates, *modularized during build*
-    │   ├── tests - App tests
-    │   └── vendor - Vendor code, *modularized during build*
-    ├── assets - Built out asset files, minified in production
-    │   ├── app.css - Built out app CSS/SCSS
-    │   ├── loader.js - Built out JS module loader
-    │   └── app.js - Built out app JS
-    ├── config.ru - Rack development web server configuration
-    ├── index.html - The app entry point
-    └── tmp - Temporary build files used by rakep
-
-Testing
--------
-
-You can test the app by invoking
-
     $ bundle exec rake test
+or
+    $ bundle exec rackup && open http://localhost:9292/tests/index.html
 
-This executes the tests by using [Phantom.JS](http://www.phantomjs.org/), which you need to have installed.
+or
+    $ bundle exec rake autotest # if you're on a Mac
 
-Or you can run the tests via
+Develop your library
+--------------------
 
-    $ bundle exec rackup
-    $ open http://localhost:9292/tests/index.html
-
-If you develop on a Mac, you can automatically execute the tests everytime a file changes via
-
-    $ bundle exec rake autotest
+Implement your awesome library in `app/lib/library.js` and don't forget to add tests in `app/tests/library_test.js`.
