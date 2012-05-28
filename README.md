@@ -29,3 +29,8 @@ Develop your library
 --------------------
 
 Implement your awesome library in `app/lib/library.js` and don't forget to add tests in `app/tests/library_test.js`.
+
+Upload latest version of your library to GitHub
+-----------------------------------------------
+
+Invoke `rake upload_latest` to upload the latest version of your library to GitHub Downloads.
