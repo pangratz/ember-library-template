@@ -9,6 +9,11 @@ gem 'rack'
 gem 'rack-rewrite'
 # gem 'rack-streaming-proxy'
 
+gem "json"
+gem "nokogiri"
+gem "rest-client"
+gem "github_api"
+
 gem 'kicker'
 
 gem 'sass'
