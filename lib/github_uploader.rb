@@ -1,5 +1,6 @@
 require "rest-client"
 require "github_api"
+require "json"
 
 class GithubUploader
 
