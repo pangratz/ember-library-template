@@ -63,12 +63,7 @@ input 'app' do
       filter EmberAssertFilter
       uglify {|input| input}
     end
-    concat %w[
-      vendor/jquery.js
-      vendor/ember.js
-      vendor/ember-data.js
-      vendor/sproutcore-routing.js
-    ], 'app.js'
+    concat 'app.js'
   end
 
   match 'modules/**/*.js' do
@@ -112,7 +107,7 @@ input 'app' do
     if ENV['RAKEP_MODE'] == 'production'
       yui_css
     end
-    concat ['bootstrap.css', 'main.css'], 'app.css'
+    concat 'app.css'
   end
 
   match 'css/**/*.scss' do
