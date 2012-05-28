@@ -1,4 +1,4 @@
-require('ember-skeleton/library');
+require('library/library');
 
 module("library");
 

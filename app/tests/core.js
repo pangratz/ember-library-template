@@ -1,1 +1,1 @@
-require('ember-skeleton/core');
+require('library/core');
