@@ -1,1 +1,1 @@
-require('library/core');
+require('#{APPNAME}/core');

@@ -5,6 +5,16 @@ require 'rake-pipeline-web-filters'
 
 WebFilters = Rake::Pipeline::Web::Filters
 
+class AppNameFilter < Filter
+  def generate_output(inputs, output)
+    inputs.each do |input|
+      result = input.read
+      result.gsub!(/#\{APPNAME\}/, "#{APPNAME}")
+      output.write(result)
+    end
+  end
+end
+
 class LoaderFilter < WebFilters::MinispadeFilter
   def generate_output(inputs, output)
     inputs.each do |input|
@@ -41,6 +51,7 @@ output 'assets'
 
 input 'app' do
   match 'lib/**/*.js' do
+    filter AppNameFilter
     filter LoaderFilter,
       :module_id_generator => proc { |input|
         input.path.sub(/^lib\//, "#{APPNAME}/").sub(/\.js$/, '')
@@ -96,6 +107,7 @@ input 'app' do
   end
 
   match 'tests/**/*.js' do
+    filter AppNameFilter
     filter LoaderFilter,
       :module_id_generator => proc { |input|
         input.path.sub(/^lib\//, "#{APPNAME}/").sub(/\.js$/, '')

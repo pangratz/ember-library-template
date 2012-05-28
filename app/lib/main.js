@@ -1,6 +1,6 @@
-require('library/core');
-require('library/library');
+require('#{APPNAME}/core');
+require('#{APPNAME}/library');
 
 Ember.View.create({
-    templateName: 'library/~templates/main_page'
+    templateName: '#{APPNAME}/~templates/main_page'
 }).append();

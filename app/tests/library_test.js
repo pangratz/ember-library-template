@@ -1,4 +1,4 @@
-require('library/library');
+require('#{APPNAME}/library');
 
 module("library");
 
