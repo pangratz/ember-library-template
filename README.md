@@ -10,6 +10,12 @@ Get started
     $ cd ember-library-template
     $ bundle install
 
+Change LIBRARYNAME in `Rakefile` to the name of your library
+
+    $ bundle execute rake init
+
+This initializes your library. Afterwards delete the `init` task in the `Rakefile`.
+
 Now the template is initialized. Next: change the name of your library. To do this, update the value of the `APPNAME` variable in `Rakefile` and `Assetfile`.
 
 Run the tests
