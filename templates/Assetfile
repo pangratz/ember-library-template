@@ -1,4 +1,4 @@
-APPNAME = 'library'
+APPNAME = "#{LIBRARYNAME}"
 
 require 'json'
 require 'rake-pipeline-web-filters'
