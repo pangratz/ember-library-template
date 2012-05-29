@@ -29,7 +29,7 @@ or
 
 or
 
-    $ bundle exec rake autotest # if you're on a Mac
+    $ bundle exec guard
 
 Develop your library
 --------------------
