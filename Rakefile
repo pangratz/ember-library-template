@@ -1,14 +1,14 @@
-APPNAME = 'library'
+LIBRARYNAME = 'my-library'
 
 require 'colored'
 require 'rake-pipeline'
 
-desc "Build #{APPNAME}"
+desc "Build #{LIBRARYNAME}"
 task :build do
   Rake::Pipeline::Project.new('Assetfile').invoke
 end
 
-desc "Clean #{APPNAME}"
+desc "Clean #{LIBRARYNAME}"
 task :clean do
   Rake::Pipeline::Project.new('Assetfile').clean
 end
@@ -22,7 +22,7 @@ task :test => :build do
   cmd = "phantomjs tests/qunit/run-qunit.js \"file://#{File.dirname(__FILE__)}/tests/index.html\""
 
   # Run the tests
-  puts "Running #{APPNAME} tests"
+  puts "Running #{LIBRARYNAME} tests"
   success = system(cmd)
 
   if success
@@ -76,9 +76,22 @@ def upload_file(uploader, filename, description, file)
   end
 end
 
-desc "Upload latest build of #{APPNAME} to GitHub repository"
+desc "Upload latest build of #{LIBRARYNAME} to GitHub repository"
 task :upload_latest do
   uploader = setup_uploader
 
-  upload_file(uploader, "#{APPNAME}-latest.js", "#{APPNAME} Master", "app/lib/library.js")
+  upload_file(uploader, "#{LIBRARYNAME}-latest.js", "#{LIBRARYNAME} Master", "app/lib/#{LIBRARYNAME}.js")
+end
+
+desc "Init app"
+task :init do
+  Rake::Pipeline::Project.new('Initfile').invoke
+  
+  FileUtils.rm_rf('app_template')
+  FileUtils.rm_rf('templates')
+  
+  # FileUtils.rm_rf('.git')
+  #{ }`git init`
+  
+  puts "App initialized. Remove 'init' task from Rakefile"
 end
