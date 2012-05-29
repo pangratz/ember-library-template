@@ -10,6 +10,10 @@ end
 
 output "app"
 input "app_template" do
+  match "lib/library.js" do
+    concat "lib/#{LIBRARYNAME}.js"
+  end
+  
   match "**/*.{js,css,html}" do
     filter AppNameFilter
   end
