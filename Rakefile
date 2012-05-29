@@ -1,4 +1,4 @@
-LIBRARYNAME = 'library'
+LIBRARYNAME = 'my-library'
 
 require 'colored'
 require 'rake-pipeline'
