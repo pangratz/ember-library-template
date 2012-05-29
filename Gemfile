@@ -14,8 +14,6 @@ gem "nokogiri"
 gem "rest-client"
 gem "github_api"
 
-gem 'kicker'
-
 gem 'sass'
 gem 'compass'
 
